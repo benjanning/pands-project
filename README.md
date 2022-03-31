@@ -60,17 +60,19 @@ It appears that a distinction exists between petal and sepal measurements so per
 
 Here we can see that:
 
-(Petal length and width are very highly positively correlated (r = 0.96), which tells us that as one gets larger so does the other, indicating that petal length and width have a close relationship.
-On the other hand, sepal measurements have a very weak relationship with one another (r = -0.12).
-Both petal length and width have very strong positive correlations with sepal length (r = 0.87 and 0.82 respectively) indicating that as both get larger, so does sepal length.
-Both petal length and width have fairly weak negative correlations with sepal width (r = -0.43 and -0.37 respectively) indicating there is not much of a relationship between these features.
-These correlations tell us that sepal width is not moderately or highly correlated with any other measurement.
+The corellation between the petal length and petal width was very high (r = 0.96).  This informed us that as one grows/gets larger so does the other.  Hence, petal length and width are closely related.
 
-A heatmap was also used, as it could represent the data more visually.)
+Sepal measurements however, had a very low correlation (r = -0.12).  However, we can see that when petal length and petal width get larger together, the sepal length does too (r = 0.87, 0.82).
+
+There is very little correlation between both petal measurements and the sepal width (r = -0.43 and 0.37)
+
+These results inform us that the sepal width is not highly related to any of the other measurements. 
+
+In order to represent the data more visually, a Heat Map was also added.
 
 # Label Encoder
 
-(Machine learning usually deals with datasets which contains multiple labels in one or more than one columns. These labels can be in the form of words or numbers. Label Encoding refers to converting the labels into numeric form so as to convert it into the machine-readable form.  This task was performed using Scikit-learn.)
+When working with Machine Learning we often deal with datasets which have several labels in one or more columns.  The labels are presented in numbers or words.  As the machine learning algorithm can't work with words,label encoding converts words into numbers.  Scikit-learn was used to undertake this task.
 
 # Model Training
 
@@ -82,17 +84,9 @@ I was now able to print a metric to get the overall performance of the algorithm
 
 The K-Nearest Neighbour (KNN) algorithm interprets the dataset as numpy arrays and builds a basic model using scikit-learn.  [04]
 
-(KNN can be used for classification prediction models and so is fitting for the Iris Dataset. A KNN model is built with a dataset that contains input features and output labels and, when presented with new data, uses Euclidean Distance to measure the distance between the new data points and a certain number of established data points. The number of data points, called k, can be adjusted based on the size of the dataset. If the majority of established data points nearest the new data point match a particular label, the model will ascertain that the new data presented belongs to that label.)
+KNN was used, as it is suitable for calssification prediction work.  KNN uses Euclindean Distance when presented with new data in order to measure new data points, as well as already existing data points.  Relevant to the size of the data set, we can adjust the number of data points (k).  KNN will include new data in a specific label if: The majority of the older data points closest to the new data points match that specific label.
 
 The Decision Tree Classifier uses internal nodes which represent the features of a dataset, the branches represent the decision rules and each leaf node represents the outcome.
-
-
-
-
-
-
-
-
 
 
 
