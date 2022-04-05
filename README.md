@@ -13,10 +13,7 @@ A Botanist named Edgar Anderson collected the original data, before a statistici
 
 Below are some of the key reasons explaining why the Iris Data remains so popular for data analysts:
 
-Due to the null values present in the dataset and equal representation of each class, it is seen as fair and balanced.  Centimetres are used to measure each of the four features.  Classification is quite easy, as the setosa is seperable (linearly) from the other species.  The other two species have overlap in features, but are also distinguishable when looking at certain measurements.  For these reasons, the power of machine learning and prediction can be used effectively on this dataset.  
-
-
-[01]
+Due to the null values present in the dataset and equal representation of each class, it is seen as fair and balanced.  Centimetres are used to measure each of the four features.  Classification is quite easy, as the setosa is seperable (linearly) from the other species.  The other two species have overlap in features, but are also distinguishable when looking at certain measurements.  For these reasons, the power of machine learning and prediction can be used effectively on this dataset.  [01]
 
 # Approach
 
@@ -40,7 +37,7 @@ The first step in the Jupyter Notebook involved importing all the relevant modul
 
 # Load the Data Set
 
-Now it was time to import the CSV file and display it using Pandas (pd for short).
+Now it was time to import the CSV file and display it using Pandas (abbreviation = pd).
 I also wanted to look at some basic stats and info about the data, using dataframe (df).
 I checking how many samples of each class there were, to ensure it was 50 each.
 
@@ -76,22 +73,17 @@ When working with Machine Learning we often deal with datasets which have severa
 
 # Model Training
 
-After researching techniques for evaluating the performance of a machine learning algorithm, I opted for train test split, as it can be used for classification or regression problems and can be used for any supervised learning algorithm. [01]
+After researching techniques for evaluating the performance of a machine learning algorithm, I opted for train test split, as it can be used for classification or regression problems and can be used for any supervised learning algorithm. [02]
 
-I also opted for logistic regression, as it can be used to to predict the probability of a categorical dependent variable. [02]
+I also opted for logistic regression, as it can be used to to predict the probability of a categorical dependent variable. [03]
 
-I was now able to print a metric to get the overall performance of the algorithm.  [3]
+I was now able to print a metric to get the overall performance of the algorithm.  [04]
 
-The K-Nearest Neighbour (KNN) algorithm interprets the dataset as numpy arrays and builds a basic model using scikit-learn.  [04]
+The K-Nearest Neighbour (KNN) algorithm interprets the dataset as numpy arrays and builds a basic model using scikit-learn.  [05]
 
 KNN was used, as it is suitable for calssification prediction work.  KNN uses Euclindean Distance when presented with new data in order to measure new data points, as well as already existing data points.  Relevant to the size of the data set, we can adjust the number of data points (k).  KNN will include new data in a specific label if: The majority of the older data points closest to the new data points match that specific label.
 
 The Decision Tree Classifier uses internal nodes which represent the features of a dataset, the branches represent the decision rules and each leaf node represents the outcome.
-
-
-
-
-
 
 # Conclusion
 
@@ -110,10 +102,10 @@ The KNN model used in the project is reliable at identifying the setosa species,
 # References
 
 [01] - https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching#:~:text=The%20Iris%20dataset%20is%20deservedly,is%20small%20but%20not%20trivial.
-[01] - https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/
-[02] - https://towardsdatascience.com/building-a-logistic-regression-in-python-step-by-step-becd4d56c9c8
-[03] - https://www.kaggle.com/getting-started/27261
-[04] - https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761#:~:text=Summary-,The%20k%2Dnearest%20neighbors%20(KNN)%20algorithm%20is%20a%20simple,that%20data%20in%20use%20grows.
+[02] - https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/
+[03] - https://towardsdatascience.com/building-a-logistic-regression-in-python-step-by-step-becd4d56c9c8
+[04] - https://www.kaggle.com/getting-started/27261
+[05] - https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761#:~:text=Summary-,The%20k%2Dnearest%20neighbors%20(KNN)%20algorithm%20is%20a%20simple,that%20data%20in%20use%20grows.
 
 
 
