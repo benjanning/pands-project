@@ -3,6 +3,8 @@ The Pands-Project for the Programming and Scripting course
 
 # What is the Iris Data Set?
 
+![iris](https://user-images.githubusercontent.com/98034425/166289007-53fd0ca5-181a-48ed-aea4-b31334e3d75d.png)
+
 One of the most popular datasets for machine learning, The Iris Dataset is made up three species of Iris Flowers and 50 samples of each species.
 
 The species are: Setosa, Versicolor and Virginica.
