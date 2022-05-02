@@ -21,6 +21,8 @@ I began researching the Iris Data Set and investigating how to analyse it by goi
 
 An exploratory data analysis approach seemed most popular with others and also most logical.  I opted for this, as well as combining it with some machine learning algorithms.  Modules such as Pandas, Matplotlib and Numpy were essential in visualising the data and drawing conclusions from there. 
 
+I decided to use the analysis.py file to output the main summary of the data, as well as histograms and scatter plots, and use Jupyter Notebook to go deeper into the analysis. 
+
 # Research and Investigation of the Iris Data Set
 
 I first downloaded the Iris Data CSV file, which was the key file used to investigate the relationship between the three species of flower. 
@@ -106,6 +108,7 @@ The KNN model used in the project is reliable at identifying the setosa species,
 [03] - https://towardsdatascience.com/building-a-logistic-regression-in-python-step-by-step-becd4d56c9c8
 [04] - https://www.kaggle.com/getting-started/27261
 [05] - https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761#:~:text=Summary-,The%20k%2Dnearest%20neighbors%20(KNN)%20algorithm%20is%20a%20simple,that%20data%20in%20use%20grows.
+[06] (Used for Analysis.py) - https://www.pythontutorial.net/python-basics/python-write-text-file/
 
 
 
