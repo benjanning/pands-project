@@ -6,6 +6,8 @@ The Pands-Project for the Programming and Scripting course
 
 # What is the Iris Data Set?
 
+![iris](https://user-images.githubusercontent.com/98034425/166447668-68d3f470-012a-489f-bdad-825b64cd7f3c.png)
+
 One of the most popular datasets for machine learning, The Iris Dataset is made up three species of Iris Flowers and 50 samples of each species.
 
 The species are: Setosa, Versicolor and Virginica.
@@ -18,6 +20,8 @@ Below are some of the key reasons explaining why the Iris Data remains so popula
 
 Due to the null values present in the dataset and equal representation of each class, it is seen as fair and balanced.  Centimetres are used to measure each of the four features.  Classification is quite easy, as the setosa is seperable (linearly) from the other species.  The other two species have overlap in features, but are also distinguishable when looking at certain measurements.  For these reasons, the power of machine learning and prediction can be used effectively on this dataset.  [01]
 
+![Edgar Anderson](https://user-images.githubusercontent.com/98034425/166447731-f473a84f-85ed-40cf-b213-6789b2d7b9d2.png)
+
 # Approach
 
 I began researching the Iris Data Set and investigating how to analyse it by going through various websites and watching videos. Seeing how other people have approached the task in the past and comparing different methods was a good starting point for the project.
@@ -29,6 +33,8 @@ I decided to use the analysis.py file to output the main summary of the data, as
 # Research and Investigation of the Iris Data Set
 
 I first downloaded the Iris Data CSV file, which was the key file used to investigate the relationship between the three species of flower. 
+
+![CSV File](https://user-images.githubusercontent.com/98034425/166447801-fa211e4f-ba29-444b-b901-eaa05031a7b6.png)
 
 # Import the Modules
 
@@ -50,13 +56,24 @@ I checking how many samples of each class there were, to ensure it was 50 each.
 
 After doing research on methods of comparing and cross-referencing data sets, I found the pairplot function in Seaborn.  This visual representation gives a great overview of the data set as a whole, the relationships between variables and helps identify trends. 
 
+![Pairplot](https://user-images.githubusercontent.com/98034425/166447848-82705811-c7f6-4da4-911e-779cda841b46.png)
+
 I then printed histogrmas of Petal Length and Width, as well as Sepal Length and Width.
+
+![Hist1](https://user-images.githubusercontent.com/98034425/166447876-247834f8-5a72-43da-a553-5b19796cf8a2.png)
+![Hist2](https://user-images.githubusercontent.com/98034425/166447877-e42f2f60-f48c-40cd-99a0-929b7135a068.png)
+![Hist3](https://user-images.githubusercontent.com/98034425/166447880-62c78e50-8cf9-4d40-af81-cf1cc024c7c5.png)
+![Hist4](https://user-images.githubusercontent.com/98034425/166447882-b703669f-3a47-4807-b426-fbd7d3c72f8f.png)
 
 I also opted to use a Scatter Matrix, as it visualises the relationship between variables.
 
+![Scatter Matrix](https://user-images.githubusercontent.com/98034425/166447951-66ca000a-ec5e-4141-ad24-ce280c99ff9e.png)
+
 # Coorelation Matrix
 
-Afte researching methods of correlation and coeffecients between variables I decided to include a coorelation Matrix, which can be run with a simple bit of code: df.corr() 
+![Correlation Matrix](https://user-images.githubusercontent.com/98034425/166447916-2181c61e-cdb9-4865-9aa7-173fb023e5db.png)
+
+After researching methods of correlation and coeffecients between variables I decided to include a coorelation Matrix, which can be run with a simple bit of code: df.corr() 
 
 It appears that a distinction exists between petal and sepal measurements so perhaps there is some internal consistency within them. 
 
@@ -85,6 +102,8 @@ I also opted for logistic regression, as it can be used to to predict the probab
 I was now able to print a metric to get the overall performance of the algorithm.  [04]
 
 The K-Nearest Neighbour (KNN) algorithm interprets the dataset as numpy arrays and builds a basic model using scikit-learn.  [05]
+
+![K Nearest Neighbour](https://user-images.githubusercontent.com/98034425/166448509-a2db9f41-781e-4ae8-b9e0-51c8b272fdd5.png)
 
 KNN was used, as it is suitable for calssification prediction work.  KNN uses Euclindean Distance when presented with new data in order to measure new data points, as well as already existing data points.  Relevant to the size of the data set, we can adjust the number of data points (k).  KNN will include new data in a specific label if: The majority of the older data points closest to the new data points match that specific label.
 
