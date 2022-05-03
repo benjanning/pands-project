@@ -107,10 +107,15 @@ The KNN model used in the project is reliable at identifying the setosa species,
 # References
 
 [01] - https://stats.stackexchange.com/questions/74776/what-aspects-of-the-iris-data-set-make-it-so-successful-as-an-example-teaching#:~:text=The%20Iris%20dataset%20is%20deservedly,is%20small%20but%20not%20trivial.
+
 [02] - https://machinelearningmastery.com/train-test-split-for-evaluating-machine-learning-algorithms/
+
 [03] - https://towardsdatascience.com/building-a-logistic-regression-in-python-step-by-step-becd4d56c9c8
+
 [04] - https://www.kaggle.com/getting-started/27261
+
 [05] - https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761#:~:text=Summary-,The%20k%2Dnearest%20neighbors%20(KNN)%20algorithm%20is%20a%20simple,that%20data%20in%20use%20grows.
+
 [06] (Used for Analysis.py) - https://www.pythontutorial.net/python-basics/python-write-text-file/
 
 
