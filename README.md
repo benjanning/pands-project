@@ -1,9 +1,6 @@
 # pands-project
 The Pands-Project for the Programming and Scripting course
 
-# pands-project
-The Pands-Project for the Programming and Scripting course
-
 # What is the Iris Data Set?
 
 ![iris](https://user-images.githubusercontent.com/98034425/166447668-68d3f470-012a-489f-bdad-825b64cd7f3c.png)
@@ -90,6 +87,8 @@ These results inform us that the sepal width is not highly related to any of the
 In order to represent the data more visually, a Heat Map was also added. Varying colors in the heatmap depict the differences in various features corresponding to different classes.
 
 # Label Encoder
+
+![Sci Kit Learn](https://user-images.githubusercontent.com/98034425/166449171-7a3eb4b6-780f-4e8b-91da-59ba11032a99.png)
 
 When working with Machine Learning we often deal with datasets which have several labels in one or more columns.  The labels are presented in numbers or words.  As the machine learning algorithm can't work with words,label encoding converts words into numbers.  Scikit-learn was used to undertake this task.
 
