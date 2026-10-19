@@ -44,4 +44,8 @@ Data loading and inspection, exploratory analysis, visual communication and work
 
 ---
 
-Part of my Higher Diploma in Computing (Data Analytics). [View my project portfolio](https://github.com/benjanning/programming2022).
+Part of my Higher Diploma in Computing (Data Analytics). [View my project portfolio](https://benjanning.github.io/projects/).
+
+## Reproducibility corrections (October 2026)
+
+The notebook executed all 25 code cells. Corrected the case-sensitive iris.csv path, restricted pandas correlations to numeric columns and seeded/stratified the train/test split. Outputs were regenerated. Install requirements.txt and open Project.ipynb from the repository root.
