@@ -1,51 +1,33 @@
-# Iris Flower Dataset — Exploratory Data Analysis
+# Iris dataset exploration
 
-**Python · pandas · NumPy · Matplotlib · Seaborn**
+Use summary statistics and visual exploration to reveal patterns in the Iris dataset.
 
-An exploratory analysis of the classic Iris dataset, examining how sepal and petal measurements vary across three flower species.
+![Authentic project preview](assets/preview.jpg)
 
-![Petal length distribution](./petallength.png)
+**Python · pandas · NumPy · Seaborn**
 
-## The question
+[Visual case study](https://benjanning.github.io/projects/projects/iris-analysis/) · [Main portfolio](https://benjanning.github.io/projects/)
 
-Can basic summary statistics and visualisations help identify meaningful differences between Iris setosa, versicolor and virginica?
+## What it does
 
-## What I built
+Created a Python analysis script and notebook to summarize Iris measurements and explore relationships between features and species.
 
-- Loaded and explored the dataset using pandas.
-- Calculated descriptive statistics for the four flower measurements.
-- Produced histograms and scatter plots to compare feature distributions.
-- Used visual analysis to explore relationships between features and species.
-- Documented the approach and findings in a notebook and standalone Python script.
+## Key features
 
-## Files
+- Included CSV, descriptive summaries and distribution plots.
+- Feature relationships, pair plots and numeric correlations.
+- Educational classifier examples with a seeded stratified split.
 
-| File | Purpose |
-| --- | --- |
-| [Project.ipynb](./Project.ipynb) | Step-by-step notebook with analysis and commentary |
-| [analysis.py](./analysis.py) | Python analysis script |
-| [iris.csv](./iris.csv) | Dataset used in the project |
-| [summary.txt](./summary.txt) | Generated descriptive summary |
-| [petallength.png](./petallength.png), [petalwidth.png](./petalwidth.png) | Petal measurement charts |
-| [sepallength.png](./sepallength.png), [sepalwidth.png](./sepalwidth.png) | Sepal measurement charts |
-
-## Run it locally
+## Run the analysis
 
 ```bash
-python -m pip install pandas numpy matplotlib seaborn jupyter
+python -m pip install -r requirements.txt
 python analysis.py
 ```
+Run from the repository root. For the full notebook, open Project.ipynb in a Jupyter interface installed separately.
 
-Run from the repository directory so relative data paths resolve. Alternatively, open `Project.ipynb` in Jupyter.
+## Technical details and verification
 
-## What it demonstrates
+The corrected notebook executed all 25 code cells in V1. The preview is a newly plotted presentation of the included measurements, with given species labels rather than predictions. The Iris teaching dataset is not evidence of general model performance. Original script, figures, data and source references remain available.
 
-Data loading and inspection, exploratory analysis, visual communication and working with a small multivariate dataset. **This is exploratory coursework, not a deployed predictive model.**
-
----
-
-Part of my Higher Diploma in Computing (Data Analytics). [View my project portfolio](https://benjanning.github.io/projects/).
-
-## Reproducibility corrections (October 2026)
-
-The notebook executed all 25 code cells. Corrected the case-sensitive iris.csv path, restricted pandas correlations to numeric columns and seeded/stratified the train/test split. Outputs were regenerated. Install requirements.txt and open Project.ipynb from the repository root.
+[Original documentation and academic references](COURSEWORK.md) · [Visual provenance](assets/PROVENANCE.md)
