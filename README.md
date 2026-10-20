@@ -1,33 +1,39 @@
-# Iris dataset exploration
+# Iris / three species, four measurements
 
-Use summary statistics and visual exploration to reveal patterns in the Iris dataset.
+A clear, reproducible exploration of 150 supplied flower observations, with fifty examples of each species.
 
-![Authentic project preview](assets/preview.jpg)
+![Actual petal and sepal relationships](results/relationships.png)
 
-**Python · pandas · NumPy · Seaborn**
+**Python · pandas · NumPy · Matplotlib · Descriptive analysis**
 
-[Visual case study](https://benjanning.github.io/projects/projects/iris-analysis/) · [Main portfolio](https://benjanning.github.io/projects/)
+[Visual case study](https://benjanning.github.io/projects/projects/iris-analysis/) · [Portfolio](https://benjanning.github.io/projects/)
 
-## What it does
+## What the measurements show
 
-Created a Python analysis script and notebook to summarize Iris measurements and explore relationships between features and species.
+Setosa forms a distinct petal cluster in these observations. Versicolor and Virginica overlap; sepal measurements overlap more strongly. Colours are the supplied species labels, not model predictions.
 
-## Key features
+![All four observed feature distributions](results/distributions.png)
 
-- Included CSV, descriptive summaries and distribution plots.
-- Feature relationships, pair plots and numeric correlations.
-- Educational classifier examples with a seeded stratified split.
+Each point is an actual measurement in centimetres. Boxes show medians and quartiles. A fixed seed changes only horizontal point placement, preserving all values and repeated rows.
 
-## Run the analysis
+![Observed species means and spread](results/profiles.png)
+
+Bars show one sample standard deviation on either side of the mean. They describe observed spread and are not confidence intervals. Features are separate measurements, not a sequence.
+
+## Reproduce and inspect
 
 ```bash
 python -m pip install -r requirements.txt
-python analysis.py
+python explore_iris.py
+python -m unittest discover -p "test_*.py" -v
 ```
-Run from the repository root. For the full notebook, open Project.ipynb in a Jupyter interface installed separately.
 
-## Technical details and verification
+The entry point resolves paths independently of the working directory and saves three figures, [twelve species/feature summaries](results/species-summary.csv), [pooled correlations](results/pooled-correlations.csv) and [input provenance and versions](results/analysis.json). Three tests independently reconcile means and standard deviations, validate counts/hash and reproduce numeric files exactly. Source CI regenerates figures and exports a commit-identified verified package for the portfolio's review process.
 
-The corrected notebook executed all 25 code cells in V1. The preview is a newly plotted presentation of the included measurements, with given species labels rather than predictions. The Iris teaching dataset is not evidence of general model performance. Original script, figures, data and source references remain available.
+## Source and interpretation
 
-[Original documentation and academic references](COURSEWORK.md) · [Visual provenance](assets/PROVENANCE.md)
+The preserved [iris.csv](iris.csv) is an Iris teaching dataset variant. [UCI's Iris record](https://archive.ics.uci.edu/dataset/53/iris) documents the four measurements in centimetres, three species and historical corrections to observations 35 and 38. This project records those supplied rows and the file hash rather than silently replacing data. UCI provides the dataset under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); see its record for original attribution to R. A. Fisher and the dataset history.
+
+Identical measurement rows are retained: equal measurements alone do not establish duplicate sampling. Pooled correlations can reflect differences between species; they do not establish causation. This descriptive exploration does not measure general classifier performance. Original educational classifier examples, `analysis.py`, `Project.ipynb`, charts and [coursework documentation](COURSEWORK.md) remain available.
+
+[Visual provenance](assets/PROVENANCE.md)

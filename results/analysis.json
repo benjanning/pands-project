@@ -1,0 +1,34 @@
+{
+  "rows": 150,
+  "species_counts": {
+    "Setosa": 50,
+    "Versicolor": 50,
+    "Virginica": 50
+  },
+  "duplicate_rows": 1,
+  "duplicate_policy": "Retained as supplied observations; identical measurements do not establish duplicate sampling.",
+  "dataset_sha256": "73a90c6d74bff5296e1e2f1117e461a35f231def7d8f9e6a53fafc819262fe0d",
+  "units": "centimetres",
+  "source": "https://archive.ics.uci.edu/dataset/53/iris",
+  "variant_note": "Supplied CSV preserved unchanged. UCI documents historical corrections to observations 35 and 38; no silent data replacement.",
+  "observations_35_38": [
+    {
+      "sepal.length": 4.9,
+      "sepal.width": 3.1,
+      "petal.length": 1.5,
+      "petal.width": 0.2,
+      "variety": "Setosa"
+    },
+    {
+      "sepal.length": 4.9,
+      "sepal.width": 3.6,
+      "petal.length": 1.4,
+      "petal.width": 0.1,
+      "variety": "Setosa"
+    }
+  ],
+  "python": "3.12.2",
+  "numpy": "2.5.3",
+  "pandas": "3.0.6",
+  "matplotlib": "3.9.1"
+}

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "project": {
+    "slug": "iris-analysis",
+    "title": "Iris dataset exploration",
+    "category": "Data analysis",
+    "repo": "pands-project",
+    "stack": [
+      "Python",
+      "pandas",
+      "NumPy",
+      "Seaborn"
+    ],
+    "image": "relationships.png",
+    "alt": "Observed petal and sepal relationships for fifty flowers from each of three Iris species",
+    "desc": "Explore three Iris species through authentic measurements, clear distributions and reproducible descriptive analysis.",
+    "built": "Preserved the original Iris coursework and added a portable, tested visual investigation of all 150 supplied observations.",
+    "why": "Before choosing a model, it helps to see how measurements vary and which features reveal useful structure. Clear exploratory analysis makes a dataset easier to understand.",
+    "how": [
+      "Compare petal and sepal relationships using the observed species labels.",
+      "Inspect all four feature distributions, with every measurement visible and units in centimetres.",
+      "Compare species mean profiles and observed spread, then inspect the saved summaries and dataset provenance."
+    ],
+    "demonstrates": "Data preparation, exploratory analysis, reproducible notebooks and selecting visuals that explain a pattern.",
+    "caption": "All 150 supplied observations, fifty per species. The petal cluster for Setosa is distinct in this sample; the other species overlap. These colours represent observed labels, not predictions.",
+    "result": "Generated from the same source analysis as the figures.",
+    "limits": "This is descriptive exploration of a small, familiar teaching dataset. Separation in these observations is not independent validation of a classifier or evidence of general performance. Pooled correlations mix species and do not establish causation. Identical measurement rows are retained because equality alone does not prove duplicate sampling. The supplied CSV is preserved; historical Iris variants differ in two documented observations.",
+    "technical": "A portable script validates the four positive finite measurement columns and three groups of fifty, records the input SHA-256 and software versions, and exports twelve feature/species summaries plus pooled correlations. Three tests reconcile summaries with independent raw-row calculations, validate provenance/counts and reproduce all numeric outputs. Standard-deviation bars describe observed variation, not uncertainty of the mean. Original analysis.py and Project.ipynb remain intact.",
+    "run": "Install requirements.txt, run python explore_iris.py and python -m unittest discover -p \"test_*.py\" -v. Inspect results/species-summary.csv, results/analysis.json and the preserved original notebook.",
+    "extra": "",
+    "gallery": [
+      [
+        "distributions.png",
+        "Every measurement, with median/quartile boxes and clearly labelled centimetres."
+      ],
+      [
+        "profiles.png",
+        "Species means ±1 sample standard deviation; these are not confidence intervals."
+      ]
+    ]
+  },
+  "assets": [
+    {
+      "name": "relationships.png",
+      "path": "results/relationships.png",
+      "provenance": "Actual supplied petal and sepal measurements coloured by observed species labels, not predictions."
+    },
+    {
+      "name": "distributions.png",
+      "path": "results/distributions.png",
+      "provenance": "All supplied measurements with sample quartiles. Seed 40 changes horizontal visual jitter only."
+    },
+    {
+      "name": "profiles.png",
+      "path": "results/profiles.png",
+      "provenance": "Species sample means with plus/minus one observed sample standard deviation; not confidence intervals."
+    }
+  ],
+  "result_path": "results/portfolio-summary.txt"
+}
