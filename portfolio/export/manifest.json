@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source_repository": "benjanning/pands-project",
-  "source_revision": "2a1cfdf6a3943458b1ac335ed078f5b8143b425b",
-  "verification_run": 39430617572,
+  "source_revision": "b546ed0fc22d57e33a38b3ca638a2791cafec727",
+  "verification_run": 39612817447,
   "project": {
     "slug": "iris-analysis",
     "title": "Iris dataset exploration",
@@ -12,37 +12,68 @@
       "Python",
       "pandas",
       "NumPy",
-      "Seaborn"
+      "JavaScript"
     ],
-    "image": "relationships.png",
-    "alt": "Observed petal and sepal relationships for fifty flowers from each of three Iris species",
-    "desc": "Explore three Iris species through authentic measurements, clear distributions and reproducible descriptive analysis.",
-    "built": "Preserved the original Iris coursework and added a portable, tested visual investigation of all 150 supplied observations.",
+    "image": "explorer.png",
+    "alt": "Working Iris observation explorer with native species and feature controls, actual source points and checked summary cards",
+    "desc": "Filter species, compare any pair of Iris measurements and inspect the original rows behind independently checked summaries.",
+    "built": "Built an interactive observation lab over the preserved 150-row analysis, with species filters, four-feature selectors, exact source tables and filtered CSV downloads.",
     "why": "Before choosing a model, it helps to see how measurements vary and which features reveal useful structure. Clear exploratory analysis makes a dataset easier to understand.",
     "how": [
-      "Compare petal and sepal relationships using the observed species labels.",
-      "Inspect all four feature distributions, with every measurement visible and units in centimetres.",
-      "Compare species mean profiles and observed spread, then inspect the saved summaries and dataset provenance."
+      "Choose observed species and any horizontal/vertical feature; axis ranges stay fixed as species change.",
+      "Compare browser-computed means and sample SD with independent Python reference summaries.",
+      "Inspect every selected source row or download all four original measurements and supplied species labels."
     ],
-    "demonstrates": "Data preparation, exploratory analysis, reproducible notebooks and selecting visuals that explain a pattern.",
-    "caption": "All 150 supplied observations, fifty per species. The petal cluster for Setosa is distinct in this sample; the other species overlap. These colours represent observed labels, not predictions.",
+    "demonstrates": "Data provenance, descriptive statistics, independent numerical checks, accessible interactive graphics and reproducible publication.",
+    "caption": "Actual working explorer: original observations use species-specific shapes and colours; summary cards show sample means and SD in centimetres.",
     "result": "150 supplied observations, 50 per species. Mean petal lengths: Setosa 1.462 cm, Versicolor 4.260 cm, Virginica 5.552 cm. Setosa forms a distinct petal cluster in these observations; Versicolor and Virginica overlap. All four measurements and all species labels are observed data, not model predictions. Repeated measurement rows are retained; this descriptive teaching sample does not establish general classification performance.",
     "limits": "This is descriptive exploration of a small, familiar teaching dataset. Separation in these observations is not independent validation of a classifier or evidence of general performance. Pooled correlations mix species and do not establish causation. Identical measurement rows are retained because equality alone does not prove duplicate sampling. The supplied CSV is preserved; historical Iris variants differ in two documented observations.",
-    "technical": "A portable script validates the four positive finite measurement columns and three groups of fifty, records the input SHA-256 and software versions, and exports twelve feature/species summaries plus pooled correlations. Three tests reconcile summaries with independent raw-row calculations, validate provenance/counts and reproduce all numeric outputs. Standard-deviation bars describe observed variation, not uncertainty of the mean. Original analysis.py and Project.ipynb remain intact.",
-    "run": "Install requirements.txt, run python explore_iris.py and python -m unittest discover -p \"test_*.py\" -v. Inspect results/species-summary.csv, results/analysis.json and the preserved original notebook.",
-    "extra": "",
+    "technical": "The original analysis now also exports every source row and twelve reference summaries. Five Python regressions reconcile original rows, historical variants, provenance and statistics; two Node checks cover sample SD and CSV semantics; three browser journeys cover all sixteen feature pairings, filters, exports, failed loading and narrow layouts. Generated build metadata stays untracked. Original coursework and data remain intact.",
+    "run": "Install requirements.txt; run python explore_iris.py, python -m unittest discover -p \"test_*.py\" -v and python build_explorer.py. Run npm ci, npm run test:rules, npx playwright install chromium and npm run test:browser. Serve docs locally to explore.",
+    "extra": "https://benjanning.github.io/pands-project/",
     "gallery": [
       [
+        "filtered.png",
+        "A real species-filtered view; fifty supplied Virginica observations, with unchanged feature axes."
+      ],
+      [
+        "explorer-mobile.jpg",
+        "The same species controls, plots and summaries on a narrow screen."
+      ],
+      [
+        "relationships.png",
+        "Original petal and sepal figures retained alongside the interactive lab."
+      ],
+      [
         "distributions.png",
-        "Every measurement, with median/quartile boxes and clearly labelled centimetres."
+        "Every original measurement, with median/quartile boxes."
       ],
       [
         "profiles.png",
-        "Species means ±1 sample standard deviation; these are not confidence intervals."
+        "Species means plus/minus one sample SD, not confidence intervals."
       ]
-    ]
+    ],
+    "challenge": "Filtering must change the view without changing the evidence. The browser computes summaries independently, while Python exports reference statistics from the preserved source. Every feature pair is checked, repeated rows retain their original order, and the source hash and documented variant travel with the release."
   },
   "assets": [
+    {
+      "name": "explorer.png",
+      "sha256": "813ff41485df14f7e258586ac0399e9e1c4ad4301accc97128544f6066c2561c",
+      "bytes": 146039,
+      "provenance": "Real Chromium capture of the tested explorer with all 150 original source observations."
+    },
+    {
+      "name": "filtered.png",
+      "sha256": "7f08cf9ca0ee07700740088e2a5393db2381ed018b45f6ab9c13e3438a429216",
+      "bytes": 115034,
+      "provenance": "Real Chromium capture after filtering to the fifty supplied Virginica rows."
+    },
+    {
+      "name": "explorer-mobile.jpg",
+      "sha256": "6c3160f1908778b2164e785e0ab07ff22fac09783ae92e66e16320b09ebe71c0",
+      "bytes": 272334,
+      "provenance": "Real narrow-screen Chromium capture of working source controls and observations."
+    },
     {
       "name": "relationships.png",
       "sha256": "7c279b893bb031c15324b01e6ce5d12c7e4b87100d4fa3bdba67a52791a60807",
