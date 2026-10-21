@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source_repository": "benjanning/pands-project",
-  "source_revision": "b546ed0fc22d57e33a38b3ca638a2791cafec727",
-  "verification_run": 39612817447,
+  "source_revision": "72eba1e1259603e907493f0d873110b4d32666fb",
+  "verification_run": 39613731111,
   "project": {
     "slug": "iris-analysis",
     "title": "Iris dataset exploration",
@@ -30,7 +30,6 @@
     "limits": "This is descriptive exploration of a small, familiar teaching dataset. Separation in these observations is not independent validation of a classifier or evidence of general performance. Pooled correlations mix species and do not establish causation. Identical measurement rows are retained because equality alone does not prove duplicate sampling. The supplied CSV is preserved; historical Iris variants differ in two documented observations.",
     "technical": "The original analysis now also exports every source row and twelve reference summaries. Five Python regressions reconcile original rows, historical variants, provenance and statistics; two Node checks cover sample SD and CSV semantics; three browser journeys cover all sixteen feature pairings, filters, exports, failed loading and narrow layouts. Generated build metadata stays untracked. Original coursework and data remain intact.",
     "run": "Install requirements.txt; run python explore_iris.py, python -m unittest discover -p \"test_*.py\" -v and python build_explorer.py. Run npm ci, npm run test:rules, npx playwright install chromium and npm run test:browser. Serve docs locally to explore.",
-    "extra": "https://benjanning.github.io/pands-project/",
     "gallery": [
       [
         "filtered.png",
@@ -53,7 +52,9 @@
         "Species means plus/minus one sample SD, not confidence intervals."
       ]
     ],
-    "challenge": "Filtering must change the view without changing the evidence. The browser computes summaries independently, while Python exports reference statistics from the preserved source. Every feature pair is checked, repeated rows retain their original order, and the source hash and documented variant travel with the release."
+    "challenge": "Filtering must change the view without changing the evidence. The browser computes summaries independently, while Python exports reference statistics from the preserved source. Every feature pair is checked, repeated rows retain their original order, and the source hash and documented variant travel with the release.",
+    "demo": "https://benjanning.github.io/pands-project/",
+    "extra": ""
   },
   "assets": [
     {
@@ -70,8 +71,8 @@
     },
     {
       "name": "explorer-mobile.jpg",
-      "sha256": "6c3160f1908778b2164e785e0ab07ff22fac09783ae92e66e16320b09ebe71c0",
-      "bytes": 272334,
+      "sha256": "9de0564cb27ec32721096edee1b86dbd908f8e6a75fd4bb8f2389a17b65695b9",
+      "bytes": 272367,
       "provenance": "Real narrow-screen Chromium capture of working source controls and observations."
     },
     {
