@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Iris observation lab | Ben Janning</title>
+    <meta
+      name="description"
+      content="Explore original Iris measurements by species and feature, with independently checked summaries and exact source rows."
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="lab-rules.js" defer></script>
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to the observations</a>
+    <header>
+      <a href="https://benjanning.github.io/projects/"
+        >BEN JANNING / DATA &amp; SOFTWARE</a
+      ><span>Iris · Original observed measurements</span>
+    </header>
+    <main id="main">
+      <section class="intro">
+        <p class="eyebrow">01 / EXPLORE BEFORE EXPLAINING</p>
+        <h1>Four measurements.<br /><em>Different perspectives.</em></h1>
+        <p class="lede">
+          Choose species and features to explore the same 150 supplied flowers.
+          See the relationships, then inspect the values and variability behind
+          them.
+        </p>
+        <p class="notice">
+          Descriptive teaching data. Species labels are supplied observations,
+          not model predictions. No synthetic points, fitted classifier or
+          general performance claim.
+        </p>
+      </section>
+      <div id="failure" role="alert" hidden>
+        The observations could not be loaded. Please reload or inspect the
+        source dataset and results.
+      </div>
+      <div id="results" hidden>
+        <section class="exploration">
+          <div class="selection">
+            <fieldset>
+              <legend>Species to show</legend>
+              <div id="species-controls"></div>
+              <p class="fine">
+                Shapes and labels distinguish species alongside colour.
+              </p>
+            </fieldset>
+            <div class="axes">
+              <div>
+                <label for="x-feature">Horizontal feature</label
+                ><select id="x-feature"></select>
+              </div>
+              <div>
+                <label for="y-feature">Vertical feature</label
+                ><select id="y-feature"></select>
+              </div>
+              <div class="presets">
+                <button id="petals" type="button">Compare petals</button
+                ><button id="sepals" type="button">Compare sepals</button>
+              </div>
+            </div>
+          </div>
+          <p id="selection-status" role="status" aria-live="polite"></p>
+          <p id="same-feature" class="fine" hidden>
+            The same feature on both axes produces a diagonal. Choose different
+            features to compare their relationship.
+          </p>
+          <div class="plot-layout">
+            <div>
+              <div id="scatter"></div>
+              <p id="empty" class="empty" hidden>
+                Select at least one species to explore its observations.
+              </p>
+              <p class="fine">
+                Each symbol represents an original source row. Some symbols
+                overlap at exactly the same coordinates; no jitter is added and
+                no repeated row is removed. The axis range stays fixed for each
+                feature when species are filtered.
+              </p>
+            </div>
+            <div>
+              <h2>Means and observed spread</h2>
+              <p class="fine">
+                Mean and sample SD are computed from the selected rows in your
+                browser and checked against independent Python summaries. SD
+                describes individual variation; it is not a confidence interval.
+              </p>
+              <div id="summaries"></div>
+            </div>
+          </div>
+        </section>
+        <section class="inspect">
+          <p class="eyebrow">02 / INSPECT THE MEASUREMENTS</p>
+          <h2>Keep the source within reach.</h2>
+          <p>
+            Filtered export includes all four original features, supplied
+            species labels and source-row numbers. A source-row number
+            identifies the CSV order, excluding the header; it is not a specimen
+            identifier.
+          </p>
+          <button id="download" type="button">
+            Download selected rows CSV
+          </button>
+          <p class="fine">
+            <a href="iris-original.csv" download
+              >Download the unchanged original CSV ↗</a
+            >
+            ·
+            <a href="data.json"
+              >Inspect data and Python reference summaries ↗</a
+            >
+          </p>
+          <details>
+            <summary>Inspect selected source rows</summary>
+            <div
+              class="table-scroll"
+              tabindex="0"
+              role="region"
+              aria-label="Selected source observations, scroll horizontally on small screens"
+            >
+              <table>
+                <caption>
+                  Original measurements in centimetres; repeated measurements
+                  are retained
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Source row</th>
+                    <th scope="col">Species</th>
+                    <th scope="col">Sepal length</th>
+                    <th scope="col">Sepal width</th>
+                    <th scope="col">Petal length</th>
+                    <th scope="col">Petal width</th>
+                  </tr>
+                </thead>
+                <tbody id="source-table"></tbody>
+              </table>
+            </div>
+          </details>
+        </section>
+        <section class="limits">
+          <p class="eyebrow">03 / PATTERNS WITH CONTEXT</p>
+          <h2>Observed structure, carefully described.</h2>
+          <p>
+            Petal measurements show a distinct Setosa cluster in these supplied
+            observations, while Versicolor and Virginica overlap. Sepal
+            measurements overlap more strongly. Use the two presets to compare
+            those views; visible separation is not independent classifier
+            validation.
+          </p>
+          <p>
+            The CSV contains fifty rows per species and four measurements in
+            centimetres. Identical measurement rows are retained because equal
+            values alone do not establish duplicate sampling. The supplied
+            dataset variant and its documented rows 35 and 38 are preserved
+            rather than silently replaced. Filtering changes the view, not the
+            source data.
+          </p>
+          <p>
+            No model is trained, no biological cause is inferred and no
+            population-wide classification performance is measured. Pooled
+            relationships can reflect differences between species. Original
+            coursework, distributions, summaries and provenance remain available
+            in the source.
+          </p>
+          <p id="receipt" class="fine"></p>
+          <p>
+            <a href="https://archive.ics.uci.edu/dataset/53/iris"
+              >UCI dataset record and attribution ↗</a
+            >
+            ·
+            <a
+              href="https://github.com/benjanning/pands-project/tree/main/results"
+              >Original figures and saved analysis ↗</a
+            >
+          </p>
+        </section>
+      </div>
+      <noscript
+        >This explorer needs JavaScript. Original measurements, summaries and
+        figures remain available in the source repository.</noscript
+      >
+    </main>
+    <footer>
+      <a href="https://benjanning.github.io/projects/projects/iris-analysis/"
+        >Read the case study ↗</a
+      ><a href="https://github.com/benjanning/pands-project"
+        >Explore the source ↗</a
+      ><span
+        >Iris teaching dataset · Supplied variant preserved · UCI attribution
+        retained</span
+      >
+    </footer>
+  </body>
+</html>
