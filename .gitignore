@@ -7,3 +7,6 @@ node_modules/
 verification/
 test-results/
 playwright-report/
+# Verified build products; environment metadata is generated in CI.
+docs/
+results/explorer-data.json

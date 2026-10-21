@@ -6,7 +6,15 @@ A clear, reproducible exploration of 150 supplied flower observations, with fift
 
 **Python · pandas · NumPy · Matplotlib · Descriptive analysis**
 
-[Visual case study](https://benjanning.github.io/projects/projects/iris-analysis/) · [Portfolio](https://benjanning.github.io/projects/)
+[Explore the live observation lab](https://benjanning.github.io/pands-project/) · [Visual case study](https://benjanning.github.io/projects/projects/iris-analysis/) · [Portfolio](https://benjanning.github.io/projects/)
+
+## Working observation lab
+
+Filter the three observed species, choose any of four measurements on either axis, and compare petals with sepals using presets. The plot retains fixed ranges for each feature and uses shapes as well as colour. Summary cards calculate sample means and SD from selected source rows. Inspect the exact rows in an accessible table, download a filtered CSV or retrieve the unchanged original file. An empty selection offers a clear recovery state.
+
+The browser calculations are checked against independent Python summaries for all sixteen feature pairings at desktop and mobile widths. Two Node checks cover sample SD edge cases and CSV quoting/order; three browser journeys also check filters, downloads and failed loading. [Design and verification](OBSERVATION-LAB.md).
+
+Build the lab with `python build_explorer.py` after analysis. Install pinned browser tooling with `npm ci`, run `npm run test:rules`, then `npx playwright install chromium` and `npm run test:browser`. Serve the generated `docs/` folder for local exploration. Generated data and browser captures are rebuilt by the existing release workflow, which publishes Pages and a commit-identified portfolio package.
 
 ## What the measurements show
 
@@ -28,7 +36,7 @@ python explore_iris.py
 python -m unittest discover -p "test_*.py" -v
 ```
 
-The entry point resolves paths independently of the working directory and saves three figures, [twelve species/feature summaries](results/species-summary.csv), [pooled correlations](results/pooled-correlations.csv) and [input provenance and versions](results/analysis.json). Three tests independently reconcile means and standard deviations, validate counts/hash and reproduce numeric files exactly. Source CI regenerates figures and exports a commit-identified verified package for the portfolio's review process.
+The entry point resolves paths independently of the working directory and saves three figures, [twelve species/feature summaries](results/species-summary.csv), [pooled correlations](results/pooled-correlations.csv) and [input provenance and versions](results/analysis.json). Five Python tests independently reconcile means and standard deviations, validate counts/hash and reproduce numeric files exactly. Source CI regenerates figures and exports a commit-identified verified package for the portfolio's review process.
 
 ## Source and interpretation
 
