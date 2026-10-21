@@ -27,7 +27,6 @@
     "limits": "This is descriptive exploration of a small, familiar teaching dataset. Separation in these observations is not independent validation of a classifier or evidence of general performance. Pooled correlations mix species and do not establish causation. Identical measurement rows are retained because equality alone does not prove duplicate sampling. The supplied CSV is preserved; historical Iris variants differ in two documented observations.",
     "technical": "The original analysis now also exports every source row and twelve reference summaries. Five Python regressions reconcile original rows, historical variants, provenance and statistics; two Node checks cover sample SD and CSV semantics; three browser journeys cover all sixteen feature pairings, filters, exports, failed loading and narrow layouts. Generated build metadata stays untracked. Original coursework and data remain intact.",
     "run": "Install requirements.txt; run python explore_iris.py, python -m unittest discover -p \"test_*.py\" -v and python build_explorer.py. Run npm ci, npm run test:rules, npx playwright install chromium and npm run test:browser. Serve docs locally to explore.",
-    "extra": "https://benjanning.github.io/pands-project/",
     "gallery": [
       [
         "filtered.png",
@@ -50,7 +49,9 @@
         "Species means plus/minus one sample SD, not confidence intervals."
       ]
     ],
-    "challenge": "Filtering must change the view without changing the evidence. The browser computes summaries independently, while Python exports reference statistics from the preserved source. Every feature pair is checked, repeated rows retain their original order, and the source hash and documented variant travel with the release."
+    "challenge": "Filtering must change the view without changing the evidence. The browser computes summaries independently, while Python exports reference statistics from the preserved source. Every feature pair is checked, repeated rows retain their original order, and the source hash and documented variant travel with the release.",
+    "demo": "https://benjanning.github.io/pands-project/",
+    "extra": ""
   },
   "assets": [
     {
