@@ -336,3 +336,15 @@ footer span {
     margin-top: 32px;
   }
 }
+
+.axes .view-control,
+#view-help {
+  grid-column: 1 / -1;
+}
+#view-help {
+  margin: 0;
+}
+select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

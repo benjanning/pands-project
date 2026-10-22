@@ -67,8 +67,27 @@ def analyze(output=None, figures=True):
     (out / "analysis.json").write_text(
         json.dumps(evidence, indent=2) + "\n", encoding="utf-8"
     )
+    distributions = []
+    for species in SPECIES:
+        for feature in FEATURES:
+            observed = data.loc[data.variety == species, feature].to_numpy()
+            q1, median, q3 = np.quantile(observed, [0.25, 0.5, 0.75], method="linear")
+            distributions.append(
+                dict(
+                    species=species,
+                    feature=feature,
+                    n=len(observed),
+                    minimum=float(observed.min()),
+                    q1=float(q1),
+                    median=float(median),
+                    q3=float(q3),
+                    maximum=float(observed.max()),
+                )
+            )
     report = dict(
         schema_version=1,
+        reference_distributions=distributions,
+        quantile_method="Linear interpolation at (n - 1) * p (Type 7); whiskers use observed min/max, not Tukey fences.",
         analysis=evidence,
         features=[dict(key=key, label=label) for key, label in zip(FEATURES, LABELS)],
         species=SPECIES,
@@ -84,6 +103,12 @@ def analyze(output=None, figures=True):
     (out / "portfolio-summary.txt").write_text(
         "150 supplied observations, 50 per species. Mean petal lengths: "
         + ", ".join(f'{s} {petal.loc[s,"mean"]:.3f} cm' for s in SPECIES)
+        + ". Observed petal-length medians: "
+        + ", ".join(
+            f'{item["species"]} {item["median"]:.3f} cm (Q1 {item["q1"]:.3f}, Q3 {item["q3"]:.3f})'
+            for item in distributions
+            if item["feature"] == "petal.length"
+        )
         + ". Setosa forms a distinct petal cluster in these observations; Versicolor and Virginica overlap. All four measurements and all species labels are observed data, not model predictions. Repeated measurement rows are retained; this descriptive teaching sample does not establish general classification performance.\n",
         encoding="utf-8",
     )

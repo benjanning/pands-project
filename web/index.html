@@ -49,14 +49,24 @@
               </p>
             </fieldset>
             <div class="axes">
+              <div class="view-control">
+                <label for="chart-view">Chart view</label
+                ><select id="chart-view">
+                  <option value="scatter">Scatter: compare two features</option>
+                  <option value="distribution">
+                    Distribution: one feature by species
+                  </option>
+                </select>
+              </div>
               <div>
                 <label for="x-feature">Horizontal feature</label
                 ><select id="x-feature"></select>
               </div>
               <div>
                 <label for="y-feature">Vertical feature</label
-                ><select id="y-feature"></select>
+                ><select id="y-feature" aria-describedby="view-help"></select>
               </div>
+              <p id="view-help" class="fine"></p>
               <div class="presets">
                 <button id="petals" type="button">Compare petals</button
                 ><button id="sepals" type="button">Compare sepals</button>
@@ -74,7 +84,7 @@
               <p id="empty" class="empty" hidden>
                 Select at least one species to explore its observations.
               </p>
-              <p class="fine">
+              <p id="plot-note" class="fine">
                 Each symbol represents an original source row. Some symbols
                 overlap at exactly the same coordinates; no jitter is added and
                 no repeated row is removed. The axis range stays fixed for each
@@ -82,8 +92,8 @@
               </p>
             </div>
             <div>
-              <h2>Means and observed spread</h2>
-              <p class="fine">
+              <h2 id="summary-heading">Means and observed spread</h2>
+              <p id="summary-note" class="fine">
                 Mean and sample SD are computed from the selected rows in your
                 browser and checked against independent Python summaries. SD
                 describes individual variation; it is not a confidence interval.
