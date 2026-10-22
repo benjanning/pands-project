@@ -5,51 +5,38 @@
     "title": "Iris dataset exploration",
     "category": "Data analysis",
     "repo": "pands-project",
-    "stack": [
-      "Python",
-      "pandas",
-      "NumPy",
-      "JavaScript"
-    ],
-    "image": "explorer.png",
-    "alt": "Working Iris observation explorer with native species and feature controls, actual source points and checked summary cards",
-    "desc": "Filter species, compare any pair of Iris measurements and inspect the original rows behind independently checked summaries.",
-    "built": "Built an interactive observation lab over the preserved 150-row analysis, with species filters, four-feature selectors, exact source tables and filtered CSV downloads.",
-    "why": "Before choosing a model, it helps to see how measurements vary and which features reveal useful structure. Clear exploratory analysis makes a dataset easier to understand.",
+    "stack": ["Python", "pandas", "NumPy", "JavaScript"],
+    "image": "distribution.jpg",
+    "alt": "Actual Iris distribution explorer with all source observations and separate median/quartile summary strips",
+    "desc": "Explore feature distributions with original observations, independently checked quartiles and consistent species filters and exports.",
+    "built": "Extended the existing observation lab with a single-feature distribution view, auditable medians/quartiles and full-range summaries, preserving the scatter controls and original rows.",
+    "why": "A scatter plot shows relationships, but makes the distribution of one measurement harder to inspect. A shared observed-data view connects centres and spread to the source rows behind them.",
     "how": [
-      "Choose observed species and any horizontal/vertical feature; axis ranges stay fixed as species change.",
-      "Compare browser-computed means and sample SD with independent Python reference summaries.",
-      "Inspect every selected source row or download all four original measurements and supplied species labels."
+      "Choose the scatter or single-feature distribution view. Distribution uses the horizontal feature and explains why the vertical control is inactive.",
+      "Filter species while retaining fixed feature ranges. Inspect original points, medians, quartiles, full observed ranges and IQR; browser statistics are checked independently in Python.",
+      "Return to the scatter presets, inspect selected rows or export all four original features. View changes never replace or remove source observations."
     ],
-    "demonstrates": "Data provenance, descriptive statistics, independent numerical checks, accessible interactive graphics and reproducible publication.",
-    "caption": "Actual working explorer: original observations use species-specific shapes and colours; summary cards show sample means and SD in centimetres.",
+    "demonstrates": "Descriptive data storytelling, precise quantile definitions, independent numerical verification, accessible controls and source-data integrity.",
+    "caption": "Genuine distribution-view capture: symbols are original observations at exact feature values, separated vertically for readability. Summary strips show Q1, median and Q3, with observed min/max whiskers. No repeated row is removed.",
     "result": "Generated from the same source analysis as the figures.",
     "limits": "This is descriptive exploration of a small, familiar teaching dataset. Separation in these observations is not independent validation of a classifier or evidence of general performance. Pooled correlations mix species and do not establish causation. Identical measurement rows are retained because equality alone does not prove duplicate sampling. The supplied CSV is preserved; historical Iris variants differ in two documented observations.",
-    "technical": "The original analysis now also exports every source row and twelve reference summaries. Five Python regressions reconcile original rows, historical variants, provenance and statistics; two Node checks cover sample SD and CSV semantics; three browser journeys cover all sixteen feature pairings, filters, exports, failed loading and narrow layouts. Generated build metadata stays untracked. Original coursework and data remain intact.",
+    "technical": "A pure browser helper computes Type 7 linear quartiles from a sorted copy, preserving row order. Python exports twelve distribution references using NumPy linear quantiles; standard-library inclusive quartiles independently reconcile them. Both plot modes share feature scales and species markers. Distribution points keep exact feature values; deterministic vertical offsets separate observations, and summary strips sit below them for clarity. Six Python, five Node and five browser checks cover source variants/repeats, quartiles and edge cases, actual SVG geometry for every feature/species, filters, fixed scales, all-feature CSV exports, keyboard controls and mobile layout. Generated build metadata remains untracked.",
     "run": "Install requirements.txt; run python explore_iris.py, python -m unittest discover -p \"test_*.py\" -v and python build_explorer.py. Run npm ci, npm run test:rules, npx playwright install chromium and npm run test:browser. Serve docs locally to explore.",
     "gallery": [
       [
-        "filtered.png",
-        "A real species-filtered view; fifty supplied Virginica observations, with unchanged feature axes."
+        "distribution-mobile.jpg",
+        "The same distribution controls, original observations and exact descriptive summaries on mobile."
       ],
       [
-        "explorer-mobile.jpg",
-        "The same species controls, plots and summaries on a narrow screen."
+        "filtered.png",
+        "The retained scatter view filtered to the fifty supplied Virginica rows."
       ],
       [
         "relationships.png",
-        "Original petal and sepal figures retained alongside the interactive lab."
-      ],
-      [
-        "distributions.png",
-        "Every original measurement, with median/quartile boxes."
-      ],
-      [
-        "profiles.png",
-        "Species means plus/minus one sample SD, not confidence intervals."
+        "Original petal and sepal relationship figures remain available alongside the interactive views."
       ]
     ],
-    "challenge": "Filtering must change the view without changing the evidence. The browser computes summaries independently, while Python exports reference statistics from the preserved source. Every feature pair is checked, repeated rows retain their original order, and the source hash and documented variant travel with the release.",
+    "challenge": "A distribution graphic can silently hide repeated observations, use ambiguous quartile conventions or let decorative offsets look like measurements. The lab preserves every supplied row, states its linear quantile method, labels full-range whiskers and gives vertical offsets no numerical meaning. Independent Python and browser calculations agree, and filtering changes only the view and selected-row export.",
     "demo": "https://benjanning.github.io/pands-project/",
     "extra": ""
   },
@@ -83,6 +70,16 @@
       "name": "profiles.png",
       "path": "results/profiles.png",
       "provenance": "Species sample means with plus/minus one observed sample standard deviation; not confidence intervals."
+    },
+    {
+      "name": "distribution.jpg",
+      "path": "verification/screenshots/distribution-1440.jpg",
+      "provenance": "Actual browser capture after verifying all four distribution features, twelve independent quartile references and all 150 source positions. Points retain exact feature values; vertical offsets only separate them, and summary strips show quartiles/median with observed min/max. Species filters, original rows, exports, keyboard controls and 390px layout are checked. No generated observations or classifier claim."
+    },
+    {
+      "name": "distribution-mobile.jpg",
+      "path": "verification/screenshots/distribution-390.jpg",
+      "provenance": "Actual browser capture after verifying all four distribution features, twelve independent quartile references and all 150 source positions. Points retain exact feature values; vertical offsets only separate them, and summary strips show quartiles/median with observed min/max. Species filters, original rows, exports, keyboard controls and 390px layout are checked. No generated observations or classifier claim."
     }
   ],
   "result_path": "results/portfolio-summary.txt"

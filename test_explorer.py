@@ -48,3 +48,25 @@ class ExplorerTests(unittest.TestCase):
             self.assertEqual(item["n"], 50)
             self.assertAlmostEqual(item["mean"], statistics.mean(values))
             self.assertAlmostEqual(item["sd"], statistics.stdev(values))
+
+    def test_distribution_references_match_independent_inclusive_quartiles(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            iris.analyze(tmp, False)
+            report = json.loads(
+                (Path(tmp) / "explorer-data.json").read_text(encoding="utf-8")
+            )
+        self.assertEqual(len(report["reference_distributions"]), 12)
+        for item in report["reference_distributions"]:
+            values = [
+                row[item["feature"]]
+                for row in report["observations"]
+                if row["variety"] == item["species"]
+            ]
+            expected = statistics.quantiles(values, n=4, method="inclusive")
+            self.assertEqual(item["n"], 50)
+            for key, value in zip(["q1", "median", "q3"], expected):
+                self.assertAlmostEqual(item[key], value, places=12)
+            self.assertEqual(item["minimum"], min(values))
+            self.assertEqual(item["maximum"], max(values))
+            self.assertEqual(item["median"], statistics.median(values))
+        self.assertIn("Type 7", report["quantile_method"])
