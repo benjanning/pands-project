@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "source_repository": "benjanning/pands-project",
-  "source_revision": "72eba1e1259603e907493f0d873110b4d32666fb",
-  "verification_run": 39613731111,
+  "source_revision": "76be48a2f27f997b712253bf42454c6737c7eb94",
+  "verification_run": 39843676416,
   "project": {
     "slug": "iris-analysis",
     "title": "Iris dataset exploration",
@@ -14,65 +14,57 @@
       "NumPy",
       "JavaScript"
     ],
-    "image": "explorer.png",
-    "alt": "Working Iris observation explorer with native species and feature controls, actual source points and checked summary cards",
-    "desc": "Filter species, compare any pair of Iris measurements and inspect the original rows behind independently checked summaries.",
-    "built": "Built an interactive observation lab over the preserved 150-row analysis, with species filters, four-feature selectors, exact source tables and filtered CSV downloads.",
-    "why": "Before choosing a model, it helps to see how measurements vary and which features reveal useful structure. Clear exploratory analysis makes a dataset easier to understand.",
+    "image": "distribution.jpg",
+    "alt": "Actual Iris distribution explorer with all source observations and separate median/quartile summary strips",
+    "desc": "Explore feature distributions with original observations, independently checked quartiles and consistent species filters and exports.",
+    "built": "Extended the existing observation lab with a single-feature distribution view, auditable medians/quartiles and full-range summaries, preserving the scatter controls and original rows.",
+    "why": "A scatter plot shows relationships, but makes the distribution of one measurement harder to inspect. A shared observed-data view connects centres and spread to the source rows behind them.",
     "how": [
-      "Choose observed species and any horizontal/vertical feature; axis ranges stay fixed as species change.",
-      "Compare browser-computed means and sample SD with independent Python reference summaries.",
-      "Inspect every selected source row or download all four original measurements and supplied species labels."
+      "Choose the scatter or single-feature distribution view. Distribution uses the horizontal feature and explains why the vertical control is inactive.",
+      "Filter species while retaining fixed feature ranges. Inspect original points, medians, quartiles, full observed ranges and IQR; browser statistics are checked independently in Python.",
+      "Return to the scatter presets, inspect selected rows or export all four original features. View changes never replace or remove source observations."
     ],
-    "demonstrates": "Data provenance, descriptive statistics, independent numerical checks, accessible interactive graphics and reproducible publication.",
-    "caption": "Actual working explorer: original observations use species-specific shapes and colours; summary cards show sample means and SD in centimetres.",
-    "result": "150 supplied observations, 50 per species. Mean petal lengths: Setosa 1.462 cm, Versicolor 4.260 cm, Virginica 5.552 cm. Setosa forms a distinct petal cluster in these observations; Versicolor and Virginica overlap. All four measurements and all species labels are observed data, not model predictions. Repeated measurement rows are retained; this descriptive teaching sample does not establish general classification performance.",
+    "demonstrates": "Descriptive data storytelling, precise quantile definitions, independent numerical verification, accessible controls and source-data integrity.",
+    "caption": "Genuine distribution-view capture: symbols are original observations at exact feature values, separated vertically for readability. Summary strips show Q1, median and Q3, with observed min/max whiskers. No repeated row is removed.",
+    "result": "150 supplied observations, 50 per species. Mean petal lengths: Setosa 1.462 cm, Versicolor 4.260 cm, Virginica 5.552 cm. Observed petal-length medians: Setosa 1.500 cm (Q1 1.400, Q3 1.575), Versicolor 4.350 cm (Q1 4.000, Q3 4.600), Virginica 5.550 cm (Q1 5.100, Q3 5.875). Setosa forms a distinct petal cluster in these observations; Versicolor and Virginica overlap. All four measurements and all species labels are observed data, not model predictions. Repeated measurement rows are retained; this descriptive teaching sample does not establish general classification performance.",
     "limits": "This is descriptive exploration of a small, familiar teaching dataset. Separation in these observations is not independent validation of a classifier or evidence of general performance. Pooled correlations mix species and do not establish causation. Identical measurement rows are retained because equality alone does not prove duplicate sampling. The supplied CSV is preserved; historical Iris variants differ in two documented observations.",
-    "technical": "The original analysis now also exports every source row and twelve reference summaries. Five Python regressions reconcile original rows, historical variants, provenance and statistics; two Node checks cover sample SD and CSV semantics; three browser journeys cover all sixteen feature pairings, filters, exports, failed loading and narrow layouts. Generated build metadata stays untracked. Original coursework and data remain intact.",
+    "technical": "A pure browser helper computes Type 7 linear quartiles from a sorted copy, preserving row order. Python exports twelve distribution references using NumPy linear quantiles; standard-library inclusive quartiles independently reconcile them. Both plot modes share feature scales and species markers. Distribution points keep exact feature values; deterministic vertical offsets separate observations, and summary strips sit below them for clarity. Six Python, five Node and five browser checks cover source variants/repeats, quartiles and edge cases, actual SVG geometry for every feature/species, filters, fixed scales, all-feature CSV exports, keyboard controls and mobile layout. Generated build metadata remains untracked.",
     "run": "Install requirements.txt; run python explore_iris.py, python -m unittest discover -p \"test_*.py\" -v and python build_explorer.py. Run npm ci, npm run test:rules, npx playwright install chromium and npm run test:browser. Serve docs locally to explore.",
     "gallery": [
       [
-        "filtered.png",
-        "A real species-filtered view; fifty supplied Virginica observations, with unchanged feature axes."
+        "distribution-mobile.jpg",
+        "The same distribution controls, original observations and exact descriptive summaries on mobile."
       ],
       [
-        "explorer-mobile.jpg",
-        "The same species controls, plots and summaries on a narrow screen."
+        "filtered.png",
+        "The retained scatter view filtered to the fifty supplied Virginica rows."
       ],
       [
         "relationships.png",
-        "Original petal and sepal figures retained alongside the interactive lab."
-      ],
-      [
-        "distributions.png",
-        "Every original measurement, with median/quartile boxes."
-      ],
-      [
-        "profiles.png",
-        "Species means plus/minus one sample SD, not confidence intervals."
+        "Original petal and sepal relationship figures remain available alongside the interactive views."
       ]
     ],
-    "challenge": "Filtering must change the view without changing the evidence. The browser computes summaries independently, while Python exports reference statistics from the preserved source. Every feature pair is checked, repeated rows retain their original order, and the source hash and documented variant travel with the release.",
+    "challenge": "A distribution graphic can silently hide repeated observations, use ambiguous quartile conventions or let decorative offsets look like measurements. The lab preserves every supplied row, states its linear quantile method, labels full-range whiskers and gives vertical offsets no numerical meaning. Independent Python and browser calculations agree, and filtering changes only the view and selected-row export.",
     "demo": "https://benjanning.github.io/pands-project/",
     "extra": ""
   },
   "assets": [
     {
       "name": "explorer.png",
-      "sha256": "813ff41485df14f7e258586ac0399e9e1c4ad4301accc97128544f6066c2561c",
-      "bytes": 146039,
+      "sha256": "ac863b46ba12d34fde79b2cac1fbafbec0ae96a30c3e5593bbe62e95722282aa",
+      "bytes": 136643,
       "provenance": "Real Chromium capture of the tested explorer with all 150 original source observations."
     },
     {
       "name": "filtered.png",
-      "sha256": "7f08cf9ca0ee07700740088e2a5393db2381ed018b45f6ab9c13e3438a429216",
-      "bytes": 115034,
+      "sha256": "33beea3c5d70a12e695658ecd32cf2cac5676b4a1ba1f37bc992cb78f7138ee4",
+      "bytes": 105922,
       "provenance": "Real Chromium capture after filtering to the fifty supplied Virginica rows."
     },
     {
       "name": "explorer-mobile.jpg",
-      "sha256": "9de0564cb27ec32721096edee1b86dbd908f8e6a75fd4bb8f2389a17b65695b9",
-      "bytes": 272367,
+      "sha256": "e235abf3d9963ddf93c5992976f9e6c248fa66b22af2fa399eb503a8cd5389d0",
+      "bytes": 277471,
       "provenance": "Real narrow-screen Chromium capture of working source controls and observations."
     },
     {
@@ -92,6 +84,18 @@
       "sha256": "77db3da56f106a6ba9c592a9a01a3752ffe39f7dada4435f8430349a4d2a8b8e",
       "bytes": 68519,
       "provenance": "Species sample means with plus/minus one observed sample standard deviation; not confidence intervals."
+    },
+    {
+      "name": "distribution.jpg",
+      "sha256": "b0e81a959851a12658b948adfcd214e82ff35f57766e7448dac6d02b4202fe5d",
+      "bytes": 122882,
+      "provenance": "Actual browser capture after verifying all four distribution features, twelve independent quartile references and all 150 source positions. Points retain exact feature values; vertical offsets only separate them, and summary strips show quartiles/median with observed min/max. Species filters, original rows, exports, keyboard controls and 390px layout are checked. No generated observations or classifier claim."
+    },
+    {
+      "name": "distribution-mobile.jpg",
+      "sha256": "1a721fa099f8dc18265eaf35ae4a460a9b9fda42f44bd26dc602caf085a1e9ef",
+      "bytes": 103816,
+      "provenance": "Actual browser capture after verifying all four distribution features, twelve independent quartile references and all 150 source positions. Points retain exact feature values; vertical offsets only separate them, and summary strips show quartiles/median with observed min/max. Species filters, original rows, exports, keyboard controls and 390px layout are checked. No generated observations or classifier claim."
     }
   ]
 }
